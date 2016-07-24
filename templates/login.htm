@@ -1,0 +1,53 @@
+<html>
+<head>
+	<title>Login</title>
+	<style type="text/css">
+	span {
+		display: inline-block;
+		width: 80px;
+	}
+	#loginBtn {
+		width: 80px;
+	}
+	div {
+	    height : 30px;
+	    }
+
+	.mainDiv {
+
+		padding : 5px;
+	}
+	.forgotPwd:hover {
+
+		text-decoration: underline;
+		cursor: pointer;
+
+	}
+
+	.forgotPwd {
+
+		color: blue;
+	}
+	</style>
+</head>
+<body>
+	<div class="mainDiv">
+		<div><strong>Login Details</strong></div>
+		<div>
+			<span>Login</span>
+			<input type="text">
+		</div>
+		<div>
+			<span>Password</span>
+			<input type="password">
+		</div>
+		<div>
+			<input type="button" id="loginBtn" value="Login" ng-click="loadProducts()">
+			<input type="button" id="RegisterBtn" value="Register" ng-click= "loadRegister()" >
+		</div>
+		<div class="forgotPwd" ng-click="loadfgtPassword()">
+			Forgot Password
+		</div>
+	</div>
+</body>
+</html>
