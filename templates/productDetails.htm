@@ -1,1 +1,57 @@
-<h1>Welcome to Product Details</h1>
+<style type="text/css">
+li {
+
+	list-style: none;
+}
+nav {
+
+	float: left;
+	max-width:200px;
+	margin: 0;
+    padding: 1em;
+}
+div.itemsContainer {
+
+	border-left: 1px solidgray;
+
+}	
+div.btnLogout {
+
+	float: right;
+	
+}
+input {
+
+	background-color: green;
+	color: white;
+	text-align: center;
+	font-size: 16px;
+}
+
+ul {
+
+	display: inline-block;
+}
+</style>
+
+<div>
+	<nav>
+		<ul>
+			<li><a href="Electronics">Electronics</a></li>
+			<li><a href="Mens Wear">Mens Wear</a></li>
+			<li><a href="Womens Wear">Womens Wear</a></li>
+		</ul>
+	</nav>
+	<!-- <input type="button" value="Load" ng-click="showProductDetails()"/> -->
+	<div class="btnLogout">
+		<input type="button" value="Logout" ng-click="logout()"/>
+	</div>
+	<div class="itemsContainer">
+		<ul ng-repeat ="item in details">
+			<!-- <li>{{item}}</li> -->
+			<li><img src="{{item.image.imgList[0]}}"></li> 
+			<li>Name:{{item.name}}</li>
+			<li>Price:{{item.actualPrice}}</li>
+		</ul>	
+	</div>
+</div>

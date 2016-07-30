@@ -9,29 +9,29 @@
 	#loginBtn {
 		width: 80px;
 	}
-	div {
+	div.loginMainDiv>div {
 	    height : 30px;
 	    }
 
-	.mainDiv {
+	.loginMainDiv {
 
 		padding : 5px;
 	}
-	.forgotPwd:hover {
+	.loginForgotPwd:hover {
 
 		text-decoration: underline;
 		cursor: pointer;
 
 	}
 
-	.forgotPwd {
+	.loginForgotPwd {
 
 		color: blue;
 	}
 	</style>
 </head>
 <body>
-	<div class="mainDiv">
+	<div class="loginMainDiv">
 		<div><strong>Login Details</strong></div>
 		<div>
 			<span>Login</span>
@@ -45,7 +45,7 @@
 			<input type="button" id="loginBtn" value="Login" ng-click="loadProducts()">
 			<input type="button" id="RegisterBtn" value="Register" ng-click= "loadRegister()" >
 		</div>
-		<div class="forgotPwd" ng-click="loadfgtPassword()">
+		<div class="loginForgotPwd" ng-click="loadfgtPassword()">
 			Forgot Password
 		</div>
 	</div>

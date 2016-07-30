@@ -27,7 +27,7 @@ myApp.config(["$routeProvider",function($routeProvider){
 
 	}]);
 
-/* Navigation should be always from the mainController */
+/* Navigation should be always from the mainController because we are navigating always from this page i.e index.html initially */
 myApp.controller("mainController",["$scope","$location",function($scope,$location){
 
 	$scope.test = "Welcome";
@@ -39,11 +39,7 @@ myApp.controller("mainController",["$scope","$location",function($scope,$locatio
 
 		$location.url("/register");
 	}
-	$scope.loadProducts = function(){
-
-		$location.url("/forgotPwd");
-	}	
-
+	
 	$scope.sendEmail = function(){
 
 		$location.url("/");
@@ -56,7 +52,7 @@ myApp.controller("mainController",["$scope","$location",function($scope,$locatio
 
 }]);
 
-myApp.controller("forgotPwdController",["$scope","$location",function($scope,$location){
+myApp.controller("forgotPwdController",["$scope","$location","$http",function($scope,$location,$http){
 
 
 
@@ -72,12 +68,38 @@ myApp.controller("registrationController",["$scope","$location",function($scope,
 
 
 }]);
-myApp.controller("productDetailsController",["$scope","$location",function($scope,$location){
+myApp.controller("productDetailsController",["$scope","$location","$http",function($scope,$location,$http){
+	alert("controller");
+ 
+	var url = "http://localhost/productsApi/api/Values";
 
+	// $scope.details = [];
+	// $scope.showProductDetails = function() {
+	// 	$scope.showDetails = true;
+		$http({
+			url: url,
+			method: "GET"
+		}).then(function success(response){
 
+			// var jsonData = JSON.stringify(response.data);
+			// console.log(jsonData);
+			// var javaScriptObject = JSON.parse(jsonData)
+			// console.log(javaScriptObject);
 
+			$scope.details=response.data;
+			console.log(response.data)
 
+		},function error(response){
 
+			alert(response.statusText);
+
+		});
+
+	// }
+	$scope.logout = function(){
+
+		$location.url("/");
+	}
 
 }]);
 
